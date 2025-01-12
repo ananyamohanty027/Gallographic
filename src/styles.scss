@@ -1,0 +1,125 @@
+@import "src/assets/fonts/fonts.css";
+@import "primeicons/primeicons.css";
+
+:root {
+  --ciprime: #f55050;
+
+  --text-dark: #000;
+  --cibg-dark: #303030;
+  --cibg2-dark: #404040;
+  --cibg3-dark: #505050;
+
+  --text-light: #ffffff;
+  --cibg-light: #fff;
+  --cibg2-light: #f0f0f0;
+  --cibg3-light: #e6e6e6;
+
+  --cibg-dark-transparency-01: rgba(48, 48, 48, 0.1);
+  --cibg-dark-transparency-02: rgba(48, 48, 48, 0.2);
+  --cibg-dark-transparency-03: rgba(48, 48, 48, 0.3);
+  --cibg-dark-transparency-04: rgba(48, 48, 48, 0.4);
+  --cibg-dark-transparency-05: rgba(48, 48, 48, 0.5);
+  --cibg-dark-transparency-06: rgba(48, 48, 48, 0.6);
+  --cibg-dark-transparency-07: rgba(48, 48, 48, 0.7);
+  --cibg-dark-transparency-08: rgba(48, 48, 48, 0.8);
+  --cibg-dark-transparency-09: rgba(48, 48, 48, 0.9);
+
+  --cibg-light-transparency-01: rgba(255, 255, 255, 0.1);
+  --cibg-light-transparency-02: rgba(255, 255, 255, 0.2);
+  --cibg-light-transparency-03: rgba(255, 255, 255, 0.3);
+  --cibg-light-transparency-04: rgba(255, 255, 255, 0.4);
+  --cibg-light-transparency-05: rgba(255, 255, 255, 0.5);
+  --cibg-light-transparency-06: rgba(255, 255, 255, 0.6);
+  --cibg-light-transparency-07: rgba(255, 255, 255, 0.7);
+  --cibg-light-transparency-08: rgba(255, 255, 255, 0.8);
+  --cibg-light-transparency-09: rgba(255, 255, 255, 0.9);
+
+  --shadow1: 0px 0px 8px rgba(0, 0, 0, 0.4);
+
+  --swiper-pagination-color: white;
+  --swiper-pagination-bullet-inactive-color: white;
+  --swiper-pagination-bullet-size: 15px;
+  --swiper-pagination-bullet-horizontal-gap: 6px;
+  --swiper-pagination-bullet-border-radius: 3px;
+  --swiper-pagination-bullet-inactive-opacity: 0.2;
+}
+
+*,
+*::after,
+*::before {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input,
+textarea,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-border-radius: 0;
+  border-radius: none;
+}
+
+html,
+body {
+  font-family: "Work Sans";
+  background-color: var(--cibg);
+  color: var(--text);
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  transition: 0.2s;
+
+  &[color-scheme="dark"] {
+    --text: var(--text-light);
+    --cibg: var(--cibg-dark);
+    --cibg-contrast: var(--cibg-light);
+    --cibg2: var(--cibg2-dark);
+    --cibg3: var(--cibg3-dark);
+    --cibg-transparency01: var(--cibg-dark-transparency-01);
+    --cibg-transparency02: var(--cibg-dark-transparency-02);
+    --cibg-transparency03: var(--cibg-dark-transparency-03);
+    --cibg-transparency04: var(--cibg-dark-transparency-04);
+    --cibg-transparency05: var(--cibg-dark-transparency-05);
+    --cibg-transparency06: var(--cibg-dark-transparency-06);
+    --cibg-transparency07: var(--cibg-dark-transparency-07);
+    --cibg-transparency08: var(--cibg-dark-transparency-08);
+    --cibg-transparency09: var(--cibg-dark-transparency-09);
+  }
+
+  &[color-scheme="light"] {
+    --text: var(--text-dark);
+    --cibg: var(--cibg-light);
+    --cibg-contrast: var(--cibg-dark);
+    --cibg2: var(--cibg2-light);
+    --cibg3: var(--cibg3-light);
+    --cibg-transparency01: var(--cibg-light-transparency-01);
+    --cibg-transparency02: var(--cibg-light-transparency-02);
+    --cibg-transparency03: var(--cibg-light-transparency-03);
+    --cibg-transparency04: var(--cibg-light-transparency-04);
+    --cibg-transparency05: var(--cibg-light-transparency-05);
+    --cibg-transparency06: var(--cibg-light-transparency-06);
+    --cibg-transparency07: var(--cibg-light-transparency-07);
+    --cibg-transparency08: var(--cibg-light-transparency-08);
+    --cibg-transparency09: var(--cibg-light-transparency-09);
+  }
+
+  /* Scroll bar */
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--cibg);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--ciprime);
+  }
+}

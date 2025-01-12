@@ -1,0 +1,56 @@
+<div class="gallery-container">
+  <div class="gallery-column">
+    @for (album of albums; track album) {
+    <div
+      #galleryProject
+      class="gallery-project"
+      (click)="openModal(album)"
+      (keydown.enter)="openModal(album)"
+      tabindex="0"
+    >
+      <div
+        class="gallery-project-thumbnail"
+        pAnimateOnScroll
+        enterClass="fadein"
+        leaveClass="fadeout"
+      >
+        <div class="gallery-project-thumbnail-image">
+          <img src="{{ album.thumbnailSrc }}" alt="{{ album.thumbnailAlt }}" />
+        </div>
+        <div class="gallery-thumbnail-description">
+          <h2>{{ album.thumbnailDescription }}</h2>
+        </div>
+      </div>
+    </div>
+    }
+    <p-dialog
+      pFocusTrap
+      [(visible)]="openModalDialog"
+      [modal]="true"
+      [style]="{ width: '90vw', height: '90vh' }"
+      [draggable]="false"
+      [resizable]="false"
+      (onHide)="this.album = undefined"
+      [maximizable]="true"
+      [dismissableMask]="true"
+      [transitionOptions]="'200ms cubic-bezier(0,0,.58,1)'"
+    >
+      <button (click)="goPrev()" class="swiper-prev swiper-control">
+        <i class="pi pi-arrow-left"></i>
+      </button>
+
+      <swiper-container #swiper [loop]="true" [pagination]="true" [zoom]="true">
+        @if (this.album) { @for (sliderImage of selectedAlbumSlides; track
+        $index) {
+        <swiper-slide>
+          <div class="swiper-zoom-container">
+            <img src="{{ sliderImage.src }}" alt="" /></div
+        ></swiper-slide>
+        } }
+      </swiper-container>
+      <button (click)="goNext()" class="swiper-next swiper-control">
+        <i class="pi pi-arrow-right"></i>
+      </button>
+    </p-dialog>
+  </div>
+</div>

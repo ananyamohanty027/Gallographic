@@ -1,0 +1,186 @@
+@import "breakpoints.scss";
+
+.gallery-container {
+  max-width: 1300px;
+  margin: 0 auto;
+
+  @include breakpoint-down(xxl) {
+    padding: 0 2rem;
+  }
+
+  @include breakpoint-down(xl) {
+    padding: 0 1rem;
+  }
+
+  .gallery-column {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 7rem;
+
+    @include breakpoint-down(xl) {
+      gap: 4rem;
+    }
+    @include breakpoint-down(md) {
+      gap: 3rem;
+    }
+
+    @include breakpoint-down(sm) {
+      grid-template-columns: repeat(1, 1fr);
+      justify-items: center;
+      gap: 2rem;
+    }
+
+    .gallery-project {
+      width: 100%;
+      height: auto;
+
+      .gallery-project-thumbnail {
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+        border-radius: 10px;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+        transition: 0.3s;
+        cursor: pointer;
+
+        @include breakpoint-down(xl) {
+          height: auto;
+        }
+
+        &:hover {
+          box-shadow: var(--shadow1);
+        }
+
+        .gallery-project-thumbnail-image {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+
+        .gallery-thumbnail-description {
+          padding: 1rem 0.5rem;
+          width: 100%;
+          height: 100%;
+          background-color: var(--cibg-transparency08);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          -webkit-transition: 0.5s;
+          -moz-transition: 0.5s;
+          transition: 0.5s;
+          position: relative;
+          background-color: var(--cibg2);
+
+          h2 {
+            text-transform: uppercase;
+            font-weight: 400;
+
+            @include breakpoint-down(xl) {
+              font-size: 1.3rem;
+            }
+
+            @include breakpoint-down(md) {
+              font-size: 1.1rem;
+            }
+          }
+        }
+      }
+    }
+
+    p-dialog {
+      .p-dialog-mask {
+        background-color: var(--cibg-transparency08) !important;
+        backdrop-filter: blur(30px);
+
+        .p-dialog {
+          box-shadow: none;
+
+          &.p-dialog-maximized {
+            .p-dialog-content {
+              border-radius: 0;
+            }
+          }
+
+          .p-dialog-header {
+            position: absolute;
+            background-color: transparent;
+            width: 100%;
+            z-index: 4;
+            color: var(--text);
+            padding: 0.5rem;
+
+            .p-dialog-header-icons {
+              button {
+                padding: 1.5rem;
+                border-radius: 9px;
+
+                &:hover,
+                &:focus {
+                  cursor: pointer;
+                  background-color: rgba(255, 255, 255, 0.1);
+                }
+              }
+            }
+          }
+          .p-dialog-content {
+            background-color: rgba(0, 0, 0, 0);
+            display: flex;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.3);
+
+            .swiper-control {
+              position: absolute;
+              top: 0;
+              height: 100%;
+              width: 5%;
+              z-index: 2;
+              transition: 0.2s;
+              color: var(--text);
+
+              &:hover,
+              &:focus {
+                cursor: pointer;
+                background-color: rgba(255, 255, 255, 0.1);
+              }
+              &.swiper-prev {
+                left: 0;
+              }
+              &.swiper-next {
+                right: 0;
+              }
+            }
+
+            swiper-container {
+              width: 100%;
+              height: 100%;
+
+              swiper-slide {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: contain;
+                  object-position: center;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
